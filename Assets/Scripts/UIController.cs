@@ -49,10 +49,7 @@ public class UIController : MonoBehaviour
             recordStruct.record = points;
             string json = JsonUtility.ToJson(recordStruct);
             File.WriteAllText(fullPath + fileName + ".json", json);
-            //Debug.Log($"guardado correctamene {fullPath}");
         }
-        //else
-            //Debug.Log("no se a superado el record maximo");
     }
 
     private void LoadData()
@@ -63,11 +60,6 @@ public class UIController : MonoBehaviour
             string textJson = File.ReadAllText(fullPath);
             recordStruct = JsonUtility.FromJson<RecordStruct>(textJson);
             record = recordStruct.record;
-            //Debug.Log("record leido exitosamente");
-        }
-        else
-        {
-            //Debug.Log("no existe el primer record");
         }
     }
 

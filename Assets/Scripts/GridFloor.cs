@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GridFloor : MonoBehaviour
 {
@@ -24,12 +23,6 @@ public class GridFloor : MonoBehaviour
     {
         CreateGrid();
         SpawnCookies();
-        //Invoke("ReloadScene", 2.5f);
-    }
-
-    void ReloadScene()
-    {
-        SceneManager.LoadScene(0);
     }
 
     void CreateGrid()
@@ -48,7 +41,6 @@ public class GridFloor : MonoBehaviour
             }
             for (int j = 0; j < sizeX; j++)
             {
-                //int rand = Random.Range(1, 3);
                 if (counter == j)
                 {
                     huecos++;
@@ -108,10 +100,5 @@ public class GridFloor : MonoBehaviour
             Vector3 tempPos = new Vector3(floorCubes[randPosition].transform.position.x, 2, floorCubes[randPosition].transform.position.z);
             GameObject coockieTemp = Instantiate(coockiePref, tempPos, Quaternion.identity);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
